@@ -1,5 +1,5 @@
 import "./formulario.css"
-import CampoTexto from "../campotexto/campotexto"
+import CampoTexto from "../CampoTexto/CampoTexto"
 
  
 const Formulario = () => {
