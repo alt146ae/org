@@ -1,4 +1,4 @@
 const CampoTexto = () => {
-    return <div>campoTexto</div>
+    return <div>CampoTexto</div>
 }
 export default CampoTexto
