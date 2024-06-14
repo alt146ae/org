@@ -1,14 +1,24 @@
 import "./Colaborador.css"
-
+import { FaWindowClose, } from "react-icons/fa";
+import { AiFillHeart, AiOutlineHeart } from "react-icons/ai";
 
 const Colaborador = (props) => {
+    const { nombre, puesto, foto, equipo, id, fav } = props.datos
+    const { colorPrimario, eliminarColaborador,like } = props
+
+    //condicion ternearia // condcion ? verdadero : false
     return <div className="colaborador">
-        <div className="encabezado">
-            <img src="https://github.com/alt146ae.png" alt="AE"/>
+        <FaWindowClose className="eliminar" onClick={() => eliminarColaborador(id)} />
+        <div className="encabezado" style={{ backgroundColor: colorPrimario }}>
+            <img src={foto} alt={nombre} />
+            {/* <img src={"https://github.com/alt146ae.png"} alt="AE"/> */}
         </div>
         <div className="info">
-            <h4>Emanuel Cortez</h4>
-            <h5>Programador</h5>
+            <h4>{nombre}</h4>
+            <h5>{puesto}</h5>
+            { fav ? <AiFillHeart color="red" onClick={() =>like(id)} /> :<AiOutlineHeart onClick={() =>like(id)}/> }
+            
+            
         </div>
 
     </div>
